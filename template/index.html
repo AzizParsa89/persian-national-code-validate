@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>بررسی اعتبار کد ملی</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h4>بررسی اعتبار کد ملی</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="mb-3">
+                                <label for="national_id" class="form-label">کد ملی را وارد کنید:</label>
+                                <input type="text" class="form-control" id="national_id" name="national_id" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">بررسی</button>
+                        </form>
+                    </div>
+                    {% if result %}
+                    <div class="card-footer text-center {% if '✅' in result %}text-success{% else %}text-danger{% endif %}">
+                        <strong>{{ result }}</strong>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
